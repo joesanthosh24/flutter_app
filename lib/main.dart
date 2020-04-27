@@ -32,7 +32,9 @@ class MyApp extends StatelessWidget {
                       ),
                     ),
                   ),
-                  onPressed: () {},
+                  onPressed: () {
+                    print('Clicked quiz button');
+                  },
                   color: Colors.green,
                 ),
               ),
@@ -40,7 +42,9 @@ class MyApp extends StatelessWidget {
                 padding: const EdgeInsets.all(8.0),
                 child: FlatButton(
                   color: Colors.blue,
-                  onPressed: () {},
+                  onPressed: () {
+                    print('Clicked Practice button');
+                  },
                   child: Padding(
                     padding: const EdgeInsets.symmetric(vertical: 15.0),
                     child: Text(
