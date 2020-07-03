@@ -9,9 +9,17 @@ class AppScaffold extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Bible Quiz App'),
+        title: Center(
+          child: Text('Bible Quiz App'),
+        ),
       ),
-      body: screenBody,
+      body: Padding(
+        padding: const EdgeInsets.symmetric(
+          horizontal: 8.0,
+          vertical: 20.0,
+        ),
+        child: screenBody,
+      ),
     );
   }
 }

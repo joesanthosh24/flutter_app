@@ -11,15 +11,19 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       theme: ThemeData(
-        primaryColor: Colors.blue,
-        accentColor: Colors.green,
-        scaffoldBackgroundColor: Colors.white,
-        textTheme: TextTheme(
-          bodyText2: TextStyle(
-            fontWeight: FontWeight.bold,
+          primaryColor: Colors.blue,
+          accentColor: Colors.green,
+          scaffoldBackgroundColor: Colors.white,
+          textTheme: TextTheme(
+            bodyText2: TextStyle(
+              fontWeight: FontWeight.w800,
+              color: Colors.white,
+              fontStyle: FontStyle.italic,
+            ),
           ),
-        ),
-      ),
+          buttonTheme: ButtonThemeData(
+            textTheme: ButtonTextTheme.primary,
+          )),
       initialRoute: '/',
       routes: {
         '/': (context) => HomeScreen(),
