@@ -1,14 +1,10 @@
+import 'package:first_app/widgets/AppScaffold.dart';
 import 'package:flutter/material.dart';
 
 class HomeScreen extends StatelessWidget {
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: Center(
-          child: Text('Bible Quiz App'),
-        ),
-      ),
-      body: Container(
+    return AppScaffold(
+      screenBody: Container(
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.stretch,
           mainAxisAlignment: MainAxisAlignment.center,
@@ -36,7 +32,7 @@ class HomeScreen extends StatelessWidget {
               child: FlatButton(
                 color: Colors.blue,
                 onPressed: () {
-                  print('Clicked Practice button');
+                  Navigator.pushNamed(context, '/practice');
                 },
                 child: Padding(
                   padding: const EdgeInsets.symmetric(vertical: 15.0),
