@@ -2,6 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 import '../widgets/AppScaffold.dart';
+import '../widgets/reusable_card.dart';
 
 class PracticeScreen extends StatelessWidget {
   @override
@@ -40,13 +41,10 @@ class PracticeScreen extends StatelessWidget {
                 ),
               ],
             ),
-            Container(
+            ReusableCard(
               height: 350.0,
-              margin: EdgeInsets.symmetric(vertical: 35.0),
               color: Colors.blue,
-              child: Center(
-                child: Text('Question'),
-              ),
+              text: "Question",
             ),
             Column(
               crossAxisAlignment: CrossAxisAlignment.stretch,
