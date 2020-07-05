@@ -10,7 +10,7 @@ class AppScaffold extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         title: Center(
-          child: Text('Bible Quiz App'),
+          child: Text('Japanese Quiz App'),
         ),
       ),
       body: Padding(
