@@ -1,6 +1,8 @@
 import 'package:first_app/widgets/AppScaffold.dart';
 import 'package:flutter/material.dart';
 
+import '../widgets/action_button.dart';
+
 class HomeScreen extends StatelessWidget {
   Widget buildBottomSheet(BuildContext context) {
     return Container(
@@ -14,6 +16,34 @@ class HomeScreen extends StatelessWidget {
             topRight: Radius.circular(25.0),
           ),
         ),
+        child: Padding(
+          padding: const EdgeInsets.all(35.0),
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: <Widget>[
+              TextField(
+                textAlign: TextAlign.center,
+                onChanged: (newVal) {},
+                decoration: InputDecoration(hintText: 'Add Word (in Japanese)'),
+              ),
+              TextField(
+                textAlign: TextAlign.center,
+                onChanged: (newVal) {},
+                decoration:
+                    InputDecoration(hintText: 'Add in Kanji (if Applicable)'),
+              ),
+              Padding(
+                padding: const EdgeInsets.symmetric(vertical: 20.0),
+                child: FloatingActionButton(
+                  child: Icon(
+                    Icons.close,
+                    color: Colors.white,
+                  ),
+                ),
+              )
+            ],
+          ),
+        ),
       ),
     );
   }
@@ -25,57 +55,36 @@ class HomeScreen extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.stretch,
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
-            Padding(
-              padding: const EdgeInsets.all(8.0),
-              child: FlatButton(
-                child: Padding(
-                  padding: const EdgeInsets.symmetric(vertical: 15.0),
-                  child: Text(
-                    'Take Quiz',
-                    style: TextStyle(
-                      fontSize: 25,
-                    ),
-                  ),
-                ),
-                onPressed: () {
-                  Navigator.pushNamed(context, '/quiz');
-                },
-                color: Colors.green,
-              ),
+            ActionButton(
+              buttonText: 'Take Quiz',
+              buttonColor: Colors.green,
+              inverted: false,
+              textPadding: EdgeInsets.symmetric(vertical: 15.0),
+              onPressed: () {
+                Navigator.pushNamed(context, '/quiz');
+              },
             ),
-            Padding(
-              padding: const EdgeInsets.all(8.0),
-              child: FlatButton(
-                color: Colors.blue,
-                onPressed: () {
-                  Navigator.pushNamed(context, '/practice');
-                },
-                child: Padding(
-                  padding: const EdgeInsets.symmetric(vertical: 15.0),
-                  child: Text(
-                    'Practice with Cards',
-                    style: TextStyle(fontSize: 25),
-                  ),
-                ),
-              ),
+            ActionButton(
+              buttonText: 'Practice with Cards',
+              buttonColor: Colors.blue,
+              inverted: false,
+              textPadding: EdgeInsets.symmetric(vertical: 15.0),
+              onPressed: () {
+                Navigator.pushNamed(context, '/practice');
+              },
             ),
-            Padding(
-              padding: const EdgeInsets.all(8.0),
-              child: FlatButton(
-                color: Colors.deepPurpleAccent,
-                onPressed: () {
-                  showModalBottomSheet(
-                      context: context, builder: buildBottomSheet);
-                },
-                child: Padding(
-                  padding: const EdgeInsets.symmetric(vertical: 15.0),
-                  child: Text(
-                    'Add a Word',
-                    style: TextStyle(fontSize: 25),
-                  ),
-                ),
-              ),
-            )
+            ActionButton(
+              buttonText: 'Add a Word',
+              buttonColor: Colors.deepPurpleAccent,
+              inverted: true,
+              textPadding: EdgeInsets.symmetric(vertical: 15.0),
+              onPressed: () {
+                showModalBottomSheet(
+                  context: context,
+                  builder: buildBottomSheet,
+                );
+              },
+            ),
           ],
         ),
       ),
