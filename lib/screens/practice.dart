@@ -7,6 +7,7 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
 import '../widgets/AppScaffold.dart';
+import '../widgets/horizontal_button_group.dart';
 
 class PracticeScreen extends StatelessWidget {
   @override
@@ -97,21 +98,6 @@ class ReusableCardContainer extends StatelessWidget {
           ),
         ),
       ),
-    );
-  }
-}
-
-class HorizontalButtonGroup extends StatelessWidget {
-  final List<FlatButton> buttons;
-
-  HorizontalButtonGroup({@required this.buttons});
-
-  @override
-  Widget build(BuildContext context) {
-    return Row(
-      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-      crossAxisAlignment: CrossAxisAlignment.center,
-      children: buttons,
     );
   }
 }

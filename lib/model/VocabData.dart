@@ -15,6 +15,8 @@ class VocabData extends ChangeNotifier {
     VocabWord(word: 'えいが', inKanji: '映画'),
     VocabWord(word: 'えいかいわ', inKanji: '英会話'),
     VocabWord(word: 'おおきい', inKanji: '大きい'),
+    VocabWord(word: 'はし', inKanji: '橋'),
+    VocabWord(word: 'はし', inKanji: '箸')
   ];
 
   UnmodifiableListView<VocabWord> getVocabWords() {
