@@ -14,12 +14,17 @@ class _QuizScreenState extends State<QuizScreen> {
     return AppScaffold(
       screenBody: Container(
         child: Column(
+          mainAxisAlignment: MainAxisAlignment.start,
           children: <Widget>[
             ReusableCard(
               height: 180.0,
               color: Colors.green,
               text: 'Question',
-            )
+            ),
+            Text("Not Yet Completed", style: TextStyle(
+              height: 20,
+              color: Colors.red,
+            ),),
           ],
         ),
       ),
